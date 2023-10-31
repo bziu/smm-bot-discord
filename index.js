@@ -14,7 +14,7 @@ const token = 'YOUR DISCORD TOKEN HERE';
 const smmLatApiKey = 'GRAB YOUR API SMM.LAT/DEVELOPER';
 
 // The Discord ID of the bot owner
-const botOwnerId = '957966264033239090';
+const botOwnerId = 'discord owner id';
 
 // Open a database connection and create the 'balances' table if it doesn't exist
 const db = new sqlite3.Database('balances.db', (err) => {
