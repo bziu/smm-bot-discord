@@ -11,7 +11,7 @@ const sqlite3 = require('sqlite3').verbose();
 const token = 'YOUR DISCORD TOKEN HERE';
 
 // Your smm.lat API key
-const smmLatApiKey = 'GRAB YOUR API SMM.LAT/DEVELOPER';
+const smmLatApiKey = 'GRAB YOUR API INCLINE.SOCIAL/DEVELOPER';
 
 // The Discord ID of the bot owner
 const botOwnerId = 'discord owner id';
@@ -65,7 +65,7 @@ client.on('message', async (message) => {
 
     // Check if the user has enough balance
     const userBalance = await getBalance(message.author.id);
-    const cost = quantity <= 1000 ? quantity * 0.6 / 1000 : Math.ceil(quantity / 1000) * 0.6;
+    const cost = quantity <= 1000 ? quantity * 0.6 / 1000 : Math.ceil(quantity / 1000) * 1.5;
     if (!userBalance || userBalance < cost) {
       message.reply('Insufficient balance. Please add more balance to place this order.');
       return;
@@ -76,7 +76,7 @@ client.on('message', async (message) => {
     await updateBalance(message.author.id, newBalance);
 
     // Make the HTTPS request to smm.lat API for Instagram followers
-    const url = `https://smm.lat/api/v2?action=add&service=3060&link=instagram.com/${username}&quantity=${quantity}&key=${smmLatApiKey}`;
+    const url = `https://incline.social/api/v2?action=add&service=2&link=instagram.com/${username}&quantity=${quantity}&key=${smmLatApiKey}`;
     try {
       const response = await axios.get(url);
       const result = response.data;
@@ -126,8 +126,8 @@ client.on('message', async (message) => {
     const newBalance = userBalance - cost;
     await updateBalance(message.author.id, newBalance);
 
-    // Make the HTTPS request to smm.lat API for TikTok followers
-    const url = `https://smm.lat/api/v2?action=add&service=3062&link=tiktok.com/@${username}&quantity=${quantity}&key=${smmLatApiKey}`;
+    // Make the HTTPS request to INCLINE API for TikTok followers
+    const url = `https://incline.social/api/v2?action=add&service=9&link=tiktok.com/@${username}&quantity=${quantity}&key=${smmLatApiKey}`;
     try {
       const response = await axios.get(url);
       const result = response.data;
@@ -167,7 +167,7 @@ client.on('message', async (message) => {
 
     // Check if the user has enough balance
     const userBalance = await getBalance(message.author.id);
-    const cost = quantity <= 1000 ? quantity * 0.6 / 1000 : Math.ceil(quantity / 1000) * 0.6;
+    const cost = quantity <= 1000 ? quantity * 0.6 / 1000 : Math.ceil(quantity / 1000) * 1.5;
     if (!userBalance || userBalance < cost) {
       message.reply('Insufficient balance. Please add more balance to place this order.');
       return;
@@ -177,8 +177,8 @@ client.on('message', async (message) => {
     const newBalance = userBalance - cost;
     await updateBalance(message.author.id, newBalance);
 
-    // Make the HTTPS request to smm.lat API for Twitch followers
-    const url = `https://smm.lat/api/v2?action=add&service=3107&link=twitch.tv/${username}&quantity=${quantity}&key=${smmLatApiKey}`;
+    // Make the HTTPS request to INCLINE API for Twitch followers
+    const url = `https://incline.social/api/v2?action=add&service=3107&link=twitch.tv/${username}&quantity=${quantity}&key=${smmLatApiKey}`;
     try {
       const response = await axios.get(url);
       const result = response.data;
