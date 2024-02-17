@@ -5,9 +5,10 @@ This discord bot is meant to include incline.social api and services into a bot.
 
 > Commands:
 
-- !addfunds (user) / only bot owner
-- !igfollowers (instagram username)
-- !ttfollowers (tiktok username)
+- !addbalance (id) (amount) / only bot owner
+- !removebalance (id) (amount) / only bot owner
+- !igfollowers (instagram username) (amount)
+- !ttfollowers (tiktok username) (amount)
 
   all orders are processed automatically if the api user account has the enough funds
 
