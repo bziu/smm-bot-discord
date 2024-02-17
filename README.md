@@ -3,6 +3,8 @@
 
 This discord bot is meant to include incline.social api and services into a bot.
 
+IN ORDER FOR THE BOT WORK TURN ON ALL INTENTS.
+
 > Commands:
 
 - !addbalance (id) (amount) / only bot owner
